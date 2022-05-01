@@ -2,6 +2,8 @@
 
 ## High Level Component Diagram
 
+![High Level Component Diagram](https://raw.githubusercontent.com/ipeonte/UserManagementDemo/master/doc/HighLevelComponent.png)
+
 ## API List
 
 - /api/v1/upsertUser API to update user if exists else create a new
