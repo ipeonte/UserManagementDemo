@@ -12,15 +12,15 @@
 
 ## Build platform independent package
 
-  mvn clean package
+    mvn clean package
   
 ## Build (PROD) package with PostgreSQL support
 
-  mvn clean package -P postgre
+    mvn clean package -P postgre
   
 ## Execute
 
-  java -jar target/user-mgmt-rest-1.0.0.jar
+    java -jar target/user-mgmt-rest-1.0.0.jar
   
 Please note that any production build requires external application.properties with jdbc configuration and platform independent package requires database driver available in system path 
   
@@ -28,14 +28,14 @@ Please note that any production build requires external application.properties w
 
 ### PostgreSQL
 
-  spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
-  spring.datasource.username=<user_name>
-  spring.datasource.password=<user_password>
-  spring.datasource.hikari.schema=<db_name>
+    spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+    spring.datasource.username=<user_name>
+    spring.datasource.password=<user_password>
+    spring.datasource.hikari.schema=<db_name>
 
 ### MySQL
 
-  spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-  spring.datasource.url=jdbc:mysql://localhost:3306/<db_name>
-  spring.datasource.username=<user_name>
-  spring.datasource.password=<user_password>
+    spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+    spring.datasource.url=jdbc:mysql://localhost:3306/<db_name>
+    spring.datasource.username=<user_name>
+    spring.datasource.password=<user_password>
