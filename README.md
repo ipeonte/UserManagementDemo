@@ -24,18 +24,44 @@
   
 Please note that any production build requires external application.properties with jdbc configuration and platform independent package requires database driver available in system path 
   
-## application.properties examples
+## Database examples
 
 ### PostgreSQL
 
+### application.properties
     spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
     spring.datasource.username=<user_name>
     spring.datasource.password=<user_password>
     spring.datasource.hikari.schema=<db_name>
 
 ### MySQL
-
+### application.properties
     spring.datasource.driver-class-name=com.mysql.jdbc.Driver
     spring.datasource.url=jdbc:mysql://localhost:3306/<db_name>
     spring.datasource.username=<user_name>
     spring.datasource.password=<user_password>
+
+### Initial database schema
+    CREATE TABLE users (
+      id int NOT NULL AUTO_INCREMENT,
+      first_name varchar(255) NOT NULL,
+      last_name varchar(255) NOT NULL,
+      email varchar(255) NOT NULL,
+      PRIMARY KEY (id),
+      UNIQUE(email)
+    );
+    
+## curl examples
+
+- Create user
+    
+    curl -d '{"firstName":"Test", "lastName":"user", "email":"test_user@example.com"}' -H "Content-Type: application/json" -X POST http://localhost:8080/api/v1/upsertUser
+- Find user
+    
+    curl http://localhost:8080/api/v1/isUserExists/test_user@example.com
+- List users
+
+    curl http://localhost:8080/api/v1/listUsers
+  
+    
+    
